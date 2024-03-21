@@ -1,0 +1,141 @@
+<div class="auth-wrapper">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="right-wrapper">
+        <div class="head">
+          <img
+            src="../../../../../assets/images/logo.png"
+            alt="logo"
+            class="logo"
+          />
+          <div class="language" (click)="toggleLang()">
+            <img src="../../../../../assets/images/lang.png" alt="lang" />
+            <span> English</span>
+          </div>
+        </div>
+
+        <div class="page-title">
+          <div class="icons">
+            <img src="../../../../../assets/images/login_icon.svg" alt="" />
+          </div>
+          <div>
+            <h1 class="mb-0">Login</h1>
+          </div>
+        </div>
+
+        <form [formGroup]="form">
+          <div class="form-group with-start-icon-color">
+            <label class="required"> Email </label>
+            <div class="input-icon-color">
+              <input
+                type="text"
+                placeholder="Email"
+                formControlName="email"
+                class="form-control"
+                [ngClass]="{
+                  'is-invalid':
+                    form.get('email')?.errors &&
+                    (form.get('email')?.dirty ||
+                      form.get('email')?.touched ||
+                      formSumitted)
+                }"
+              />
+              <div class="img-bg">
+                <img
+                  src="../../../../../assets/images/logininputicon.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <app-custom-error-validation
+              [formSumitted]="formSumitted"
+              [ControlName]="'email'"
+              [formName]="form"
+              [errorType]="'required'"
+            ></app-custom-error-validation>
+
+            <div
+              class="errors"
+              *ngIf="
+                form.get('email')?.errors &&
+                (form.get('email')?.dirty || form.get('email')?.touched)
+              "
+            >
+              <span
+                class="error-message"
+                *ngIf="form.get('email')?.errors?.['pattern']"
+              >
+                Invalid Email
+              </span>
+            </div>
+          </div>
+          <div class="form-group with-start-icon-color">
+            <label class="required"> Password </label>
+            <div class="input-icon-color">
+              <input
+                [type]="show ? 'text' : 'password'"
+                placeholder=".......... "
+                class="form-control"
+                formControlName="password"
+                [ngClass]="{
+                  'is-invalid':
+                    form.get('password')?.errors &&
+                    (form.get('password')?.dirty ||
+                      form.get('password')?.touched ||
+                      formSumitted)
+                }"
+              />
+              <div class="img-bg">
+                <img
+                  src="../../../../../assets/images/logininputpass.svg"
+                  alt=""
+                />
+              </div>
+
+              <p class="icons">
+                <img
+                  src="../../../../../assets/images/eye-slash-solid.svg"
+                  alt=""
+                  *ngIf="!show"
+                  class="eye-icons"
+                  (click)="showpassword()"
+                />
+                <img
+                  src="../../../../../assets/images/eye-solid.svg"
+                  alt=""
+                  *ngIf="show"
+                  class="eye-icons"
+                  (click)="showpassword()"
+                />
+              </p>
+            </div>
+            <app-custom-error-validation
+              [formSumitted]="formSumitted"
+              [ControlName]="'password'"
+              [formName]="form"
+              [errorType]="'required'"
+            ></app-custom-error-validation>
+          </div>
+        </form>
+
+        <div class="txt-center w-100">
+          <button
+            class="btn main-btn w-100 btn-height"
+            (click)="login()"
+            [disabled]="form.invalid"
+          >
+            <span *ngIf="!showSpinner"> Login </span>
+
+            <div class="loader" *ngIf="showSpinner"></div>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="left-wrapper">
+        <img src="../../../../../assets/images/login.svg" alt="" />
+      </div>
+    </div>
+  </div>
+</div>

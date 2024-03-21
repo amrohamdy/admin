@@ -1,0 +1,119 @@
+.popup-wrapper {
+    direction: rtl;
+    // padding: 30px 30px 0 30px;
+    [dir="ltr"] & {
+        direction: ltr;
+    }
+
+    // top header
+    .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1 {
+            color: #151616;
+            font-size: 20px;
+            font-family: Din_Bold;
+        }
+    }
+
+    // close
+    .close {
+        cursor: pointer;
+    }
+    // content
+    .content {
+        margin: 24px 0;
+        text-align: center;
+        p {
+            color: #535659;
+            font-size: 16px;
+        }
+    }
+    //wallet-popup-head
+    .wallet-popup-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media (max-width: 767.9px) {
+            display: block;
+            position: relative;
+        }
+        h1 {
+            color: #71767a;
+            font-size: 16px;
+            flex: 1;
+            background: #f4f5f5;
+            padding: 18px;
+            margin-inline-end: 16px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: start;
+            color: #71767a;
+            font-family: Din_Bold;
+            @media (max-width: 767.9px) {
+                margin: 0;
+            }
+        }
+        svg {
+            position: absolute;
+            left: calc(50% - 20px);
+            @media (max-width: 767.9px) {
+                transform: rotate(-90deg);
+                top: 42px;
+            }
+        }
+        p {
+            background: #f4f5f5;
+            flex: 1;
+            border-radius: 8px;
+            padding: 18px 10px;
+            display: flex;
+            justify-content: start;
+            color: #71767a;
+            @media (max-width: 767.9px) {
+                margin-top: 20px;
+            }
+
+            span {
+                font-family: Din_Bold;
+
+                &:nth-of-type(2) {
+                    color: #d69f22;
+                    font-family: Din_Bold;
+                    display: block;
+                    margin-inline-start: 10px;
+                }
+            }
+        }
+    }
+
+    // form
+    form {
+        margin-top: 24px;
+        .form-group {
+            .currency {
+                position: absolute;
+                top: 21px;
+                left: 16px;
+                color: #71767a;
+                font-size: 14px;
+                [dir="ltr"] & {
+                    left: unset;
+                    right: 16px;
+                }
+            }
+        }
+    }
+    // buttons
+    .actions {
+        button {
+            height: 64px;
+            font-family: Din_Bold;
+        }
+    }
+}
+
+.mat-dialog-container {
+    border-radius: 8px !important;
+}

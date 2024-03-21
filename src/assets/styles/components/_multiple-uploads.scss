@@ -1,0 +1,43 @@
+.d-f-5 {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    
+    img {
+        width: 100%;
+    }
+    }
+    
+    @media (max-width: 767px) {
+    .d-f-5 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    }
+    
+    .name-file {
+    font-size: 1rem;
+    line-height: 20px;
+    color: #808080;
+    }
+    
+    .remove-file {
+    height: 2rem;
+    width: 2rem;
+    position: absolute;
+    top: .5rem;
+    inset-inline-end: 10px;
+    background: #CB6363;
+    text-align: center;
+    color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    }
+    
+.deleteMedia {
+    cursor: pointer;
+    &:hover .remove-file {
+    visibility: visible;
+    }
+}  

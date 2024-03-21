@@ -1,0 +1,41 @@
+<div
+  class="errors mb-3"
+  *ngIf="
+    formName.get(ControlName)?.hasError(errorType) &&
+    (formName.get(ControlName)?.dirty ||
+      formName.get(ControlName)?.touched ||
+      formSumitted)
+  "
+>
+  <span
+    class="error-message"
+    *ngIf="formName.get(ControlName)?.hasError(errorType)"
+  >
+    <span [ngSwitch]="errorType">
+      <ng-container *ngSwitchCase="'required'">
+        This field is required</ng-container
+      >
+      <ng-container *ngSwitchCase="'isNegativeNum'">
+        لا يسمح إدخال أرقام سالبة.
+      </ng-container>
+      <ng-container *ngSwitchCase="'onlydigits'">
+        لا يسمح بإدخال أرقام عشرية
+      </ng-container>
+
+      <ng-container *ngSwitchCase="'validLink'">
+        صيغة الرابط غير صحيحة
+      </ng-container>
+      <ng-container *ngSwitchCase="'validFourNumbers'">
+        رقم المبنى يجب ألا يتجاوز أربعة أرقام
+      </ng-container>
+
+      <ng-container *ngSwitchCase="'isGreaterThanZero'">
+        يجب إدخال قيمة أكبر من 0.
+      </ng-container>
+
+      <ng-container *ngSwitchCase="'invalid_email'">
+        invalid Email
+      </ng-container>
+    </span>
+  </span>
+</div>

@@ -1,0 +1,220 @@
+@import "../variables/variables";
+@import "../base/font";
+.btn {
+    font-family: "Cairo-Medium";
+    font-size: 16px;
+    background-color: transparent;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.transparent-btn {
+    border: 1px solid $primary-color;
+    padding: 10px 42px;
+    border-radius: 8px;
+    color: $primary-color;
+    transition: all 0.3s;
+    position: relative;
+    background: #ffffff;
+    transition: all 0.3s ease-in-out;
+    @media (max-width: 1441px) {
+        font-size: 14px;
+    }
+
+    a {
+        color: $primary-color;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        background-image: url("../../images/Ve.svg");
+        height: 18px;
+        width: 18px;
+        background-repeat: no-repeat;
+        right: 50px;
+        transform: rotate(90deg);
+        background-size: contain;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        background-image: url("../../images/Ve.svg");
+        height: 18px;
+        width: 18px;
+        background-repeat: no-repeat;
+        left: 50px;
+        transform: rotate(-90deg);
+        background-size: contain;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+    }
+    &:hover::after {
+        opacity: 1;
+        right: 0;
+        top: 14px;
+    }
+    &:hover::before {
+        opacity: 1;
+        left: 0;
+        top: 14px;
+    }
+    &:hover {
+        a {
+            color: #4e4e4e;
+        }
+    }
+
+    @media (max-width: 767.9px) {
+        padding: 15px 30px;
+
+        font-size: 14px;
+        &:hover {
+            background-color: transparent;
+            color: $primary-color;
+            border-color: $primary-color;
+        }
+        &:hover:after,
+        &:hover:before {
+            opacity: 0;
+        }
+    }
+}
+
+.main-btn {
+    border: 1px solid $primary-color;
+    padding: 16px 64px 16px 64px;
+    border-radius: 8px;
+    background-color: $primary-color;
+    color: #fff;
+    transition: all 0.3s;
+    position: relative;
+    min-height: 56px;
+    @media (max-width: 1441px) {
+        font-size: 14px;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        background-image: url("../../images/Ve.svg");
+        height: 22px;
+        width: 22px;
+        background-repeat: no-repeat;
+        right: 40px;
+        transform: rotate(90deg);
+        background-size: contain;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        background-image: url("../../images/Ve.svg");
+        height: 22px;
+        width: 22px;
+        background-repeat: no-repeat;
+        left: 40px;
+        transform: rotate(-90deg);
+        background-size: contain;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+    }
+    &:hover::after {
+        opacity: 1;
+        right: 20px;
+    }
+    &:hover::before {
+        opacity: 1;
+        left: 20px;
+    }
+    @media (max-width: 767.9px) {
+        padding: 15px 30px;
+
+        font-size: 14px;
+        &:hover {
+            background-color: $primary-color;
+            color: #fff;
+        }
+        &:hover:after,
+        &:hover:before {
+            opacity: 0;
+        }
+    }
+}
+
+.sold-btn {
+    background-color: transparent;
+    border: 0;
+    transition: all 0.3s;
+    border-radius: 0;
+    padding: 10px 72px;
+
+    --c: #d69f22; /* the border color */
+    --b: 7px; /* the border thickness*/
+    --g: 5px; /* the gap on hover */
+
+    padding: calc(var(--g) + var(--b));
+    --_g: #0000 0, var(--c) 0;
+    background: conic-gradient(from 180deg at top var(--b) right var(--b), var(--_g)) var(--_i, 200%) 0 /200% var(
+                --_i,
+                var(--b)
+            ) no-repeat,
+        conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0 var(--_i, 200%) / var(--_i, var(--b)) 200%
+            no-repeat;
+    transition: 0.3s, background-position 0.3s 0.3s;
+    cursor: pointer;
+
+    a {
+        color: $text-color;
+    }
+    &:hover {
+        --_i: 100%;
+        transition: 0.2s, background-size 0.2s 0.2s;
+        border-radius: 8px;
+        color: #fff;
+        a {
+            color: #fff;
+        }
+    }
+
+    @media (max-width: 767.9px) {
+        padding: 15px 20px;
+        --_i: 100%;
+        transition: 0.2s, background-size 0.2s 0.2s;
+        border-radius: 8px;
+        color: #fff;
+        a {
+            color: #fff;
+        }
+    }
+    @media (max-width: 1441px) {
+        font-size: 14px;
+    }
+}
+
+.dash-btn {
+    background: #71767a;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 14px;
+    padding: 12px 24px;
+    border: 0;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid transparent;
+
+    &:hover {
+        background-color: transparent;
+        color: $text-color;
+        border: 1px solid $text-color;
+    }
+}
+
+.btn:disabled {
+    background-color: $primary-color;
+    cursor: not-allowed;
+    color: #fff;
+    border-color: $primary-color;
+}

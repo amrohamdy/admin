@@ -1,0 +1,24 @@
+@import "../../../../../assets/styles/abstracts/variables";
+.page_wrapper {
+    padding: 40px !important;
+}
+.box {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    border-radius: 6px;
+    h2 {
+        color: $primary-color;
+        font-size: 38px;
+        margin-bottom: 6px;
+        font-family: "Cairo-Medium";
+    }
+    p {
+        color: #98a6ad;
+    }
+    img {
+        width: 60px;
+    }
+}

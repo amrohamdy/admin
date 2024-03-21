@@ -1,0 +1,112 @@
+.modal-content {
+    border-radius: 1.6rem;
+    border: 0;
+    background-color: #fff;
+    .modal-header {
+        padding: 2.4rem;
+        display: block;
+        border: 0;
+        .modal-title {
+            color: #272b2e;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+        .title-hint {
+            color: #939ca5;
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+        .close {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            background-color: transparent;
+            position: absolute;
+            top: 2.4rem;
+            left: 2.4rem;
+            [dir="ltr"] & {
+                left: auto;
+                right: 2.4rem;
+            }
+            svg {
+                stroke: #d8d9dc;
+                fill: #fff;
+            }
+            &:hover {
+                svg {
+                    stroke: #e76666;
+                }
+            }
+        }
+        &.with-border-bottom {
+            border-bottom: 1px solid #eeeeef;
+            padding-bottom: 1.8rem;
+        }
+    }
+    .modal-footer {
+        padding: 2.4rem;
+        justify-content: center;
+        border: 0;
+    }
+    .modal-body {
+        padding: 2.4rem;
+        .text {
+            font-size: 1.8rem;
+            color: #4e4e4e;
+            font-weight: 500;
+        }
+        &.bod_top {
+            border-top: 1px solid #e7e7e7;
+        }
+        .title {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 22px;
+            color: #0f1721;
+        }
+
+        .otp-modal {
+            text-align: center;
+            .verfy-icon {
+                border: 1px solid #e0e5f0;
+                padding: 1.6rem;
+                border-radius: 1.6rem;
+                width: 102px;
+                height: 102px;
+                border-radius: 2.4rem;
+                margin: 0 auto 2.4rem;
+            }
+            .title {
+                margin-bottom: 1.6rem;
+            }
+            .otp-text {
+                max-width: 320px;
+                margin: 0 auto 3rem;
+            }
+            .form-links {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                max-width: 470px;
+                margin: 0 auto 24px;
+            }
+        }
+    }
+    .actions-btns {
+        display: flex;
+        padding-top: 2.4rem;
+        border-top: 1px solid #e9eaec;
+        .btn {
+            border-radius: 10px;
+            font-weight: 700;
+            &:first-child {
+                min-width: 120px;
+                margin-inline-end: 15px;
+
+                border-color: #d3d4d7;
+            }
+        }
+    }
+}

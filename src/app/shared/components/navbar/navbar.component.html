@@ -1,0 +1,44 @@
+<div class="navbar_wrapper">
+  <div class="user_details">
+    <div class="img" (click)="toggleList()">
+      <div class="user_txt">
+        <img src="../../../../assets/images/user.png" alt="" />
+        <span> {{ userName }}</span>
+      </div>
+      <div class="arrow">
+        <img
+          src="../../../../assets/images/dropdown_arrow.webp"
+          alt=""
+          [ngClass]="{ rotate: viewList }"
+        />
+      </div>
+    </div>
+
+    <ul [ngClass]="{ view_list: viewList }">
+      <!-- <li>
+        <img src="../../../../assets/images/user_account.png" alt="" />
+        <a> my account</a>
+      </li>
+      <li>
+        <img src="../../../../assets/images/settings.png" alt="" />
+        <a> settings </a>
+      </li> -->
+      <li (click)="logout()">
+        <img src="../../../../assets/images/logout.png" alt="" />
+        <a> logout</a>
+      </li>
+    </ul>
+
+    <div class="lang">
+      <div class="txt_wrap" (click)="showLangs()">
+        <img src="../../../../assets/images/lang.png" alt="" />
+        <span> English </span>
+      </div>
+
+      <ul [ngClass]="{ view_langs: viewLangs }">
+        <li>English</li>
+        <li>عربي</li>
+      </ul>
+    </div>
+  </div>
+</div>

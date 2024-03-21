@@ -1,0 +1,80 @@
+<div class="page_wrapper">
+  <div class="header d-flex justify-content-between">
+    <h1>Organizations</h1>
+    <button
+      class="btn main-btn px-4"
+      [routerLink]="['/dashboard/organizations/add_organization']"
+    >
+      Add new organization
+    </button>
+  </div>
+  <div class="table-container">
+    <div class="loader_wrapper" *ngIf="showSpinner">
+      <div class="loader"></div>
+    </div>
+    <ng-container *ngIf="organizations?.length > 0">
+      <ng-container *ngIf="!showSpinner">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Number of empolyess</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let item of organizations">
+              <td>{{ item?.name }}</td>
+              <td>{{ item?.address }}</td>
+              <td>{{ item?.number_of_emps }}</td>
+              <td>
+                <div class="actions_btn">
+                  <button
+                    [routerLink]="[
+                      '/dashboard/organizations/organization_details',
+                      item?.id
+                    ]"
+                  >
+                    <img
+                      src="../../../../../assets/images/eye_icon.webp"
+                      alt=""
+                    />
+                  </button>
+                  <button
+                    [routerLink]="[
+                      '/dashboard/organizations/edit_organization',
+                      item?.id
+                    ]"
+                  >
+                    <img
+                      src="../../../../../assets/images/edit_icon.png"
+                      alt=""
+                    />
+                  </button>
+                  <button (click)="deleteOrg(item?.id)">
+                    <img
+                      src="../../../../../assets/images/delete_icon.png"
+                      alt=""
+                    />
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <app-pagination
+          [collectionSize]="collectionSize"
+          [currentPage]="currentPage"
+          [pageSize]="pageSize"
+          (changePage)="changePage($event)"
+        ></app-pagination>
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngIf="organizations?.length == 0 && !showSpinner">
+      <app-no-data-found></app-no-data-found>
+    </ng-container>
+  </div>
+</div>

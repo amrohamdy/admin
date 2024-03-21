@@ -1,0 +1,30 @@
+/* labels and tags with its all status (canceled , pending , active , etc)
+==========================================================================*/
+.status-label{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem .4rem;
+    background-color: #e6e6e6;
+    border-radius: .4rem;
+    color: $text-bold;
+    font-size: 1.4rem!important;
+    font-weight: 700;
+    text-align: center;
+    &.label-info{
+        background-color: $background-info !important;
+        color: $color-info;
+    }
+    &.label-success{
+        background-color: $background-success !important;
+        color: $color-success;
+    }
+    &.label-warning{
+        background-color: $background-warning !important;
+        color: $color-warning;
+    }
+    &.label-danger{
+        background-color: $background-danger !important;
+        color: $color-danger;
+    }
+}

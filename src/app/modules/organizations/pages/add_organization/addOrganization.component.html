@@ -1,0 +1,301 @@
+<div class="inner_page_wrapper">
+  <h1>{{ editMood ? "Edit" : "Add" }} Organization</h1>
+  <div class="page_content">
+    <ng-container *ngIf="!LoadshowSpinner">
+      <form class="form" [formGroup]="form">
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label for="" class="required">Name</label>
+              <input
+                type="text"
+                name=""
+                id=""
+                class="form-control"
+                placeholder="Name"
+                formControlName="name"
+                [ngClass]="{
+                  'is-invalid':
+                    form.get('name')?.errors &&
+                    (form.get('name')?.dirty ||
+                      form.get('name')?.touched ||
+                      formSumitted)
+                }"
+              />
+              <app-custom-error-validation
+                [formSumitted]="formSumitted"
+                [ControlName]="'name'"
+                [formName]="form"
+                [errorType]="'required'"
+              ></app-custom-error-validation>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label for="" class="required">Address</label>
+              <input
+                type="text"
+                name=""
+                id=""
+                class="form-control"
+                placeholder="Address"
+                formControlName="address"
+                [ngClass]="{
+                  'is-invalid':
+                    form.get('address')?.errors &&
+                    (form.get('address')?.dirty ||
+                      form.get('address')?.touched ||
+                      formSumitted)
+                }"
+              />
+              <app-custom-error-validation
+                [formSumitted]="formSumitted"
+                [ControlName]="'address'"
+                [formName]="form"
+                [errorType]="'required'"
+              ></app-custom-error-validation>
+            </div>
+          </div>
+          <div class="col-12" *ngIf="!editMood">
+            <div class="form-group with-start-icon-color position-relative">
+              <label class="label">Logo</label>
+              <div class="position-relative input-icon-color">
+                <input
+                  readonly
+                  class="form-control"
+                  type="text"
+                  placeholder="Upload "
+                />
+
+                <div class="img-bg">
+                  <img
+                    src="../../../../../assets/images/upload-file.svg"
+                    alt=""
+                  />
+                </div>
+                <span class="inner-btn">
+                  <small>Upload File</small>
+                </span>
+
+                <input
+                  type="file"
+                  accept="image/png,image/jpeg,"
+                  (change)="onFileSelected($event)"
+                  multiple
+                />
+              </div>
+              <div class="file_name" *ngIf="fileName">
+                {{ fileName }}
+              </div>
+              <div class="input-hint">
+                <span> Please upload file in format png,jpeg </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label for="" class="required">Number of empolyess </label>
+              <input
+                type="Number"
+                name=""
+                id=""
+                class="form-control"
+                placeholder="Number of empolyess
+"
+                formControlName="number_of_emps"
+                [ngClass]="{
+                  'is-invalid':
+                    form.get('number_of_emps')?.errors &&
+                    (form.get('number_of_emps')?.dirty ||
+                      form.get('number_of_emps')?.touched ||
+                      formSumitted)
+                }"
+              />
+
+              <app-custom-error-validation
+                [formSumitted]="formSumitted"
+                [ControlName]="'number_of_emps'"
+                [formName]="form"
+                [errorType]="'required'"
+              ></app-custom-error-validation>
+            </div>
+          </div>
+          <div class="col-6" *ngIf="!editMood">
+            <div class="form-group">
+              <label for="" class="required">User Name</label>
+              <input
+                type="text"
+                name=""
+                id=""
+                class="form-control"
+                placeholder="User Name"
+                formControlName="user_name"
+                [ngClass]="{
+                  'is-invalid':
+                    form.get('user_name')?.errors &&
+                    (form.get('user_name')?.dirty ||
+                      form.get('user_name')?.touched ||
+                      formSumitted)
+                }"
+              />
+              <app-custom-error-validation
+                [formSumitted]="formSumitted"
+                [ControlName]="'user_name'"
+                [formName]="form"
+                [errorType]="'required'"
+              ></app-custom-error-validation>
+            </div>
+          </div>
+          <div class="col-12" *ngIf="!editMood">
+            <div class="form-group">
+              <label class="required">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                placeholder=" Email"
+                formControlName="email"
+                [ngClass]="{
+                  'is-invalid':
+                    form.get('email')?.errors &&
+                    (form.get('email')?.dirty ||
+                      form.get('email')?.touched ||
+                      formSumitted)
+                }"
+              />
+            </div>
+
+            <app-custom-error-validation
+              [formSumitted]="formSumitted"
+              [ControlName]="'email'"
+              [formName]="form"
+              [errorType]="'required'"
+            ></app-custom-error-validation>
+
+            <div
+              class="errors"
+              *ngIf="
+                form.get('email')?.errors &&
+                (form.get('email')?.dirty || form.get('email')?.touched)
+              "
+            >
+              <span
+                class="error-message"
+                *ngIf="form.get('email')?.errors?.['pattern']"
+              >
+                Invalid Email
+              </span>
+            </div>
+          </div>
+
+          <div class="col-12" *ngIf="!editMood">
+            <div class="form-group">
+              <label class="required">Password</label>
+              <div class="position-relative">
+                <input
+                  [type]="showEyeIcon ? 'text' : 'password'"
+                  name=""
+                  id=""
+                  class="form-control"
+                  placeholder="Password"
+                  formControlName="password"
+                  [ngClass]="{
+                    'is-invalid':
+                      form.get('password')?.errors &&
+                      (form.get('password')?.dirty ||
+                        form.get('password')?.touched ||
+                        formSumitted)
+                  }"
+                />
+                <p class="icons">
+                  <img
+                    src="../../../../../assets/images/eye-solid.svg"
+                    alt=""
+                    *ngIf="!showEyeIcon"
+                    class="eye-icons"
+                    (click)="showpassword()"
+                  />
+                  <img
+                    src="../../../../../assets/images/eye-solid.svg"
+                    alt=""
+                    *ngIf="showEyeIcon"
+                    class="eye-icons"
+                    (click)="showpassword()"
+                  />
+                </p>
+              </div>
+              <app-custom-error-validation
+                [formSumitted]="formSumitted"
+                [ControlName]="'password'"
+                [formName]="form"
+                [errorType]="'required'"
+              ></app-custom-error-validation>
+
+              <div
+                class="check-password"
+                [ngClass]="{ 'show-check': checking }"
+              >
+                <p>
+                  <img
+                    src="../../../../../assets/images/validation-true.svg"
+                    alt=""
+                    *ngIf="!lessThanEight"
+                  />
+                  <img
+                    src="../../../../../assets/images/validation-false.svg"
+                    alt=""
+                    *ngIf="lessThanEight"
+                  />
+                  <span>
+                    Must be at least 8 characters and numbers (at least one
+                    number between them)
+                  </span>
+                </p>
+                <p>
+                  <img
+                    src="../../../../../assets/images/validation-true.svg"
+                    alt=""
+                    *ngIf="letters"
+                  />
+                  <img
+                    src="../../../../../assets/images/validation-false.svg"
+                    alt=""
+                    *ngIf="!letters"
+                  />
+                  <span>
+                    Must contain both uppercase and lowercase letters
+                  </span>
+                </p>
+                <p>
+                  <img
+                    src="../../../../../assets/images/validation-true.svg"
+                    alt=""
+                    *ngIf="specialChar"
+                  />
+                  <img
+                    src="../../../../../assets/images/validation-false.svg"
+                    alt=""
+                    *ngIf="!specialChar"
+                  />
+                  <span>{{ passValidation }}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex">
+          <button class="btn main-btn w-100" (click)="add()">
+            <span *ngIf="!showSpinner">
+              {{ editMood ? "Edit" : "Add" }}
+            </span>
+
+            <div class="loader" *ngIf="showSpinner"></div>
+          </button>
+        </div>
+      </form>
+    </ng-container>
+    <div class="loader_wrapper" *ngIf="LoadshowSpinner">
+      <div class="loader"></div>
+    </div>
+  </div>
+</div>

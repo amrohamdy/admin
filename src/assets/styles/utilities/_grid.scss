@@ -1,0 +1,32 @@
+$grids:1,
+2,
+3,
+4;
+@each $var in $grids {
+  .grid-#{$var} {
+    grid-template-columns: repeat(#{$var}, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  @each $var in $grids {
+    .grid-#{$var} {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+@media (min-width: 767px) and (max-width: 768px) {
+  @each $var in $grids {
+    .grid-#{$var} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+$gaps:10,
+12,
+14,
+15;
+@each $var in $gaps {
+  .grid-gaps-#{$var} {
+    grid-gap: #{$var}px;
+  }
+}

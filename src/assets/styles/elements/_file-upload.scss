@@ -1,0 +1,13 @@
+.files-uploaded {
+    margin-top: 8px;
+    .file {
+        border: 1px solid #d69f22;
+        width: fit-content;
+        padding: 4px 8px;
+        border-radius: 8px;
+        span {
+            color: #535659;
+            font-size: 14px;
+        }
+    }
+}

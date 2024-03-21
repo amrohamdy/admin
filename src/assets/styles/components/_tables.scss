@@ -1,0 +1,190 @@
+.table {
+  width: 100% !important;
+  border-collapse: collapse;
+  margin-bottom: 1.6rem;
+  thead {
+    th {
+      position: relative;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #4b4d52;
+      padding: 1.6rem 1.3rem;
+      background-color: var(--thead-bg-color);
+      z-index: 1;
+    }
+  }
+  tbody {
+    td {
+      padding: 1.3rem;
+      color: #7a7d85;
+      font-weight: 500;
+      .text {
+        color: #7a7d85;
+        font-weight: 500;
+      }
+      .title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #4b4d52;
+        max-width: 15rem;
+      }
+      .premision_list {
+        margin: 0;
+        max-width: 420px;
+        li {
+          margin-bottom: 5px;
+          margin-inline-end: 5px;
+        }
+      }
+      .user {
+        margin-top: 5px;
+        color: $primary-color;
+        img {
+          margin-inline-end: 5px;
+          width: 20px;
+          border-radius: 50%;
+        }
+      }
+      .number {
+        display: inline-block;
+        background-color: #f4f5f6;
+        border: 1px solid #cfd0d4;
+        border-radius: 0.4rem;
+        padding: 1px 4px;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #4b4d52;
+      }
+      .btn.icon-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.4rem;
+        height: 2.4rem;
+        border: 0;
+        padding: 0;
+        font-size: 1.6rem;
+        color: #7a7d85;
+        border-radius: 0.4rem;
+        background-color: transparent;
+        transition: none;
+      }
+      .btn.table-btn,
+      .btn.table-btn-primary {
+        font-size: 12px;
+        font-weight: 700;
+        color: #86898c;
+        background-color: transparent;
+        border: 1px solid #d8d9dc;
+        border-radius: 8px;
+        padding: 8px 16px;
+        transition: all 0.3s ease;
+        &:hover {
+          background-color: #3f5fa0;
+          color: #fff;
+        }
+      }
+      .btn.table-btn-primary {
+        background-color: #3f5fa0;
+        color: #fff;
+      }
+      .dropdown-toggle::after {
+        display: none;
+      }
+      &.action-td {
+        text-align: center;
+      }
+      .date-time {
+        .date {
+          white-space: nowrap;
+        }
+        .time {
+          padding-inline-start: 2.2rem;
+        }
+      }
+    }
+  }
+  > :not(caption) > * > * {
+    vertical-align: middle;
+    border: 0;
+    p {
+      margin-bottom: 0;
+    }
+  }
+  &.table-striped > tbody > {
+    tr {
+      position: relative;
+      &:nth-of-type(odd) > * {
+        box-shadow: none;
+        color: #7a7d85;
+      }
+      &:nth-of-type(even) > * {
+        background-color: rgba(var(--main-color-decimal), 0.05);
+      }
+      &:hover {
+        > * {
+          background-color: rgba(var(--main-color-decimal), 0.16);
+        }
+        .btn.icon-btn,
+        .number {
+          background-color: rgba(var(--main-color-decimal));
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  thead th,
+  tbody td {
+    &:first-child {
+      padding-inline-start: 1.6rem;
+      padding-inline-end: 1.6rem;
+      border-top-right-radius: 0.8rem;
+      border-bottom-right-radius: 0.8rem;
+      [dir="ltr"] & {
+        border-top-left-radius: 0.8rem;
+        border-bottom-left-radius: 0.8rem;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+    &:last-child {
+      padding-inline-start: 1.6rem;
+      padding-inline-end: 1.6rem;
+      border-top-left-radius: 0.8rem;
+      border-bottom-left-radius: 0.8rem;
+      [dir="ltr"] & {
+        border-top-right-radius: 0.8rem;
+        border-bottom-right-radius: 0.8rem;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
+  &.top-raduis-0 {
+    thead th {
+      box-shadow: inset 0px 1px 0px #cfd0d4;
+      &:first-child {
+        border-top-right-radius: 0;
+        [dir="ltr"] & {
+          border-top-left-radius: 0;
+        }
+      }
+      &:last-child {
+        border-top-left-radius: 0;
+        [dir="ltr"] & {
+          border-top-right-radius: 0;
+        }
+      }
+    }
+  }
+}
+tr.main-row {
+  &:nth-of-type(even) > * {
+    background-color: rgba(var(--main-color-decimal), 0.05);
+  }
+}
+.sub-row {
+  background: #ffffff !important;
+}

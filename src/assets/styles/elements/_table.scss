@@ -1,0 +1,67 @@
+// table
+@import "../../../assets/styles/abstracts/variables";
+.table-container {
+  overflow-x: auto;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 1px rgba(65, 30, 13, 0.1);
+  overflow: hidden;
+  padding: 20px;
+  margin-top: 32px;
+
+  .filter {
+    padding: 30px;
+    .form_group {
+      label {
+        font-size: 14px;
+        margin-bottom: 6px;
+        color: #646262;
+      }
+      input {
+        border: 1px solid #c3c3c3;
+        border-radius: 0.4rem;
+        padding: 0.7rem 1rem;
+      }
+    }
+    button {
+      // margin-top: 30px;
+      min-height: 48px;
+    }
+  }
+  table {
+    width: 100%;
+    border-collapse: unset;
+    border-spacing: 0;
+    background-color: #fff;
+    thead {
+      overflow: hidden;
+      tr {
+        th {
+          color: $primary-color;
+          border-top: 1px solid #e4e4e4;
+          border-bottom: 1px solid #e4e4e4;
+          background: rgba(0, 128, 128, 0.1);
+        }
+      }
+    }
+
+    th,
+    td {
+      padding: 18px;
+      font-size: 14px;
+      white-space: nowrap;
+      a {
+        color: #535659;
+        cursor: pointer;
+      }
+    }
+
+    tbody {
+      border-collapse: unset;
+      td {
+        border-bottom: 1px solid #e4e4e4;
+        color: #4e4e4e;
+      }
+    }
+  }
+}

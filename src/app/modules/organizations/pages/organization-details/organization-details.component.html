@@ -1,0 +1,40 @@
+<div class="inner_page_wrapper">
+  <h1>Organization details</h1>
+
+  <div class="page_content">
+    <div class="loader_wrapper" *ngIf="showSpinner">
+      <div class="loader"></div>
+    </div>
+
+    <ng-container *ngIf="!showSpinner">
+      <div class="row">
+        <div class="col-6">
+          <div class="detail_col">
+            <span> Logo </span>
+            <img [src]="orgDeatils?.logo" alt="" />
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="detail_col">
+            <span> Name </span>
+            <p>
+              {{ orgDeatils?.name }}
+            </p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="detail_col">
+            <span> Address </span>
+            <p>{{ orgDeatils?.address }}</p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="detail_col">
+            <span> number of employees </span>
+            <p>{{ orgDeatils?.number_of_emps }}</p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

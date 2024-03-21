@@ -1,0 +1,37 @@
+.checkbox-categorey {
+    padding: 2.4rem 1.6rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #e9eaec;
+    text-align: start;
+    &:last-of-type {
+        border-bottom: 0;
+    }
+    .title {
+        font-size: 1.6rem;
+        margin-bottom: 2.4rem;
+    }
+
+    .checkbox-categorey__row {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        // justify-content: space-between;
+        .check-radio-item {
+            margin-bottom: 1.6rem;
+            flex-basis: 33.333%;
+            .check-radio-label {
+                &:before {
+                    background-color: #f4f5f6;
+                }
+                .highlighted {
+                    color: #4e4e4e;
+                    font-weight: 800;
+                    margin-inline-end: 1px;
+                }
+            }
+            input[type="checkbox"]:checked + .check-radio-label {
+                color: var(--main-color);
+            }
+        }
+    }
+}

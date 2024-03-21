@@ -1,0 +1,43 @@
+.alert-box{
+    padding: 3.2rem 2.4rem 2.4rem;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    .alert-box__icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10.2rem;
+        height: 10.2rem;
+        background-color: #1B6144;
+        border-radius: 100%;
+        margin: 0 auto 2.4rem;
+    }
+    .alert-box__message{
+        font-size: 2rem;
+        font-weight: 700;
+        color: #0F1721;
+        max-width: 20rem;
+        margin: 0 auto 3.2rem;
+        text-align: center;
+    }
+    .alert-box__actions{
+        display: flex;
+        align-items: center;
+        .btn{
+            height: 5.6rem;
+            border-radius: 1.2rem;
+            border: 1px solid #CFD0D4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-prev{
+            flex-grow: 1;
+            margin-inline-end: 1.6rem;
+        }
+        .btn-primary{
+            flex-grow: 8;
+            background-color: #7A7D85;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.bredcrumb{
+    &__base{
+        color: #7A7D85;
+    }
+    &__arrwo{
+        margin-inline-end: 8px;
+        margin-inline-start: 8px;
+        position: relative;
+        top: -2px;
+    }
+}

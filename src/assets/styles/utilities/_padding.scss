@@ -1,0 +1,40 @@
+$font-size-base: 10;
+
+/*paddings*/
+@mixin paddings {
+  @for $i from 0 through 100 {
+    @if $i % 2==0 {
+      .pe-#{$i} {
+        padding-inline-end: #{$i / $font-size-base}rem !important;
+      }
+
+      .ps-#{$i} {
+        padding-inline-start: #{$i / $font-size-base}rem !important;
+      }
+
+      .pb-#{$i} {
+        padding-bottom: #{$i / $font-size-base}rem !important;
+      }
+
+      .pt-#{$i} {
+        padding-top: #{$i / $font-size-base}rem !important;
+      }
+
+      .px-#{$i} {
+        padding-left: #{$i / $font-size-base}rem !important;
+        padding-right: #{$i / $font-size-base}rem !important;
+      }
+
+      .py-#{$i} {
+        padding-top: #{$i / $font-size-base}rem !important;
+        padding-bottom: #{$i / $font-size-base}rem !important;
+      }
+
+      .p-#{$i} {
+        padding: #{$i / $font-size-base}rem !important;
+      }
+    }
+  }
+}
+
+@include paddings;

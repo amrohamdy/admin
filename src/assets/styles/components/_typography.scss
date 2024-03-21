@@ -1,0 +1,44 @@
+.title{
+    font-weight: 700;
+}
+
+.typo-wrapper{
+    margin-bottom: 3.6rem;
+    .title{
+        color: #222529;
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 1.6rem;
+    }
+    .text{
+        color: #6E7178;
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+}
+
+.text-list{
+    margin: 0;
+    padding-inline-start: 2rem;
+    padding-left: 0;
+    li{
+        &::marker{
+            color: #6E7178;
+        }
+    }
+}
+
+.polit-list{
+    margin: 0;
+    padding: 0;
+    padding-inline-start: 2rem;
+    li{
+        color: #111111;
+        font-weight: 500;
+        font-size: 1.2rem;
+    }
+}
+
+.no-wrap{
+    white-space: nowrap!important
+}

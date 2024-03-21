@@ -1,0 +1,29 @@
+.fileUploader{
+    position: relative;
+    @extend .form-control;
+    .form-control[type=file]{
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: 0;
+        padding: 0;
+        z-index: 2;
+    }
+    .check-btn{
+        padding: 0 1rem 0 0;
+        .loading{
+            margin-inline-start: .8rem;
+        }
+    }
+    p.placeholder-text{
+        margin: 0;
+        max-width: calc(100% - 120px);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #939CA5;
+        &.selected{
+            color: #272B2E;
+        }
+    }
+}

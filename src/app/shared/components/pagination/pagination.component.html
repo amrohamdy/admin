@@ -1,0 +1,61 @@
+<div class="site-pagination">
+  <ngb-pagination
+    aria-label="Custom pagination"
+    [collectionSize]="collectionSize"
+    [(page)]="currentPage"
+    (pageChange)="chagePaginationPage($event)"
+    [pageSize]="pageSize"
+    [maxSize]="5"
+  >
+    <ng-template ngbPaginationPrevious>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="20"
+        viewBox="0 0 16 20"
+        fill="none"
+      >
+        <path
+          d="M14.8588 9.59375H1.14453"
+          stroke="#86898C"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M10.2891 4.11816C12.2929 6.08698 13.294 7.28748 14.8561 9.59517C13.294 11.9029 12.2929 13.1034 10.2891 15.0722"
+          stroke="#86898C"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      <span class="mx-2"> Previous </span>
+    </ng-template>
+    <ng-template ngbPaginationNext>
+      <span class="mx-2"> Next </span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="20"
+        viewBox="0 0 16 20"
+        fill="none"
+      >
+        <path
+          d="M1.14118 9.59375H14.8555"
+          stroke="#86898C"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M5.71094 4.11816C3.70714 6.08698 2.706 7.28748 1.14394 9.59517C2.706 11.9029 3.70714 13.1034 5.71094 15.0722"
+          stroke="#86898C"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </ng-template>
+  </ngb-pagination>
+</div>
